@@ -1,0 +1,23 @@
+{{!-- loop.hbs --}}
+{{#foreach posts}}
+
+<article class="{{post_class}}">
+   <a href="{{url}}">
+   {{#if image}}
+     <p>
+       <img src="{{image}}" alt="{{title}}-pic">
+     </p>
+     {{/if}}
+   </a>
+    <section class="post-excerpt">
+      <a href="{{url}}"><h2 class="post-title">{{{title}}}</h2></a>
+     
+      <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-clock-o"></i> {{date format="DD MMMM YYYY"}}</time>
+      {{#if tags}}
+      <span class="post-tags"> <i class="fa fa-tags"></i>{{tags}}</span>
+      {{/if}}
+    </section>
+     
+  </article>
+
+{{/foreach}}

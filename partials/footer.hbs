@@ -1,0 +1,19 @@
+{{!-- footer.hbs --}}
+
+<footer class="site-footer clearfix">
+    <a href=" {{@blog.url}}/rss " class="subscribe"><i class="fa fa-rss"></i><span class="tooltip">Subscribe</span></a>
+    <section class="container">
+      <div class="row">
+        <div class="col-md-12 footer-area clearfix">
+          <ul class="social-bookmarks">
+            <li><a href="https://twitter.com/cool4zbl" class="twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" class="tumblr"><i class="fa fa-tumblr"></i></a></li>
+            <li><a href="http://weibo.com/cool4zbl" class="weibo"><i class="fa fa-weibo"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}} • All rights reserved</section>
+    <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+</footer>

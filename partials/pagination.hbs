@@ -1,0 +1,19 @@
+{{!-- pagination.hbs --}}
+
+<nav id="pagination" role="navigation">
+<div class="row">
+    <div class="col-md-3 col-sm-3 col-xs-3 text-left">
+      {{#if prev}}
+          <a class="newer-posts" href="{{page_url prev}}"><i class="fa fa-angle-double-left" data-pjax></i>&nbsp;Newer </a>
+      {{/if}}
+    </div>
+    <div class="col-md-6 col-sm-6 col-xs-6 ">
+      <span class="page-number">Page {{page}} of {{pages}}</span>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 text-right">
+      {{#if next}}
+          <a class="older-posts" href="{{page_url next}}" data-pjax> Older &nbsp;<i class="fa fa-angle-double-right"></i></a>
+      {{/if}}
+    </div>
+  </div>
+</nav>

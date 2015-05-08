@@ -1,0 +1,47 @@
+{{!-- index.hbs --}}
+{{!< default }}
+
+<header class="main-header site-header {{#if @blog.cover}}" style="background-image: url({{ @blog.cover}}) {{else}}no-cover{{/if}}">
+  <nav class="main-nav overlay clearfix">
+    {{#if @blog.logo}} 
+    <a href="{{@blog.url}}" class="blog-log"><img src="{{@blog.logo}}" alt="Blog Logo"></a>
+    {{/if}}
+    {{#if @blog.navigation}}
+    <a href="#" class="menu-button">
+      <i class="fa fa-bars"></i>
+      <span class="word">Menu</span>
+    </a>
+    {{/if}}
+  </nav>
+  <div class="vertical">
+    <div class="main-header-content inner">
+        <h1 class="page-title">{{@blog.title}}</h1>
+        <h2 class="page-description">{{@blog.description}}</h2>
+    </div>
+  </div>
+  <a class="scroll-down" href="#content" data-offset="-45"><i class="fa fa-angle-left"></i><span class="hidden">Scroll Down</span></a>
+</header>
+<main id="content" class="content" role="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-md-offset-1">
+        {{!-- 每篇博文内容 --}}
+        {{> "loop"}}
+        
+        {{pagination}}
+
+      </div>
+      
+      <div class="col-md-2">
+        <ul id="navigation" class="nav nav-stack">
+        {{#foreach posts}}
+          <li>
+            <a href="{{url}}">{{title}}</a>
+            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-clock-o"></i> {{date format="DD MMMM YYYY"}}</time>
+          </li>
+        {{/foreach}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</main> 
