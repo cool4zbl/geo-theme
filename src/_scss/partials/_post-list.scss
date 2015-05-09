@@ -1,0 +1,81 @@
+// index post-list
+/* Every post, on every page, gets this style on its <article> tag */
+#content .main-content {
+    padding: 0 2rem 0 5rem;
+}
+.main-content .post {
+    position: relative;
+    min-height: 15rem;
+    margin-bottom: 4rem;
+    word-wrap: break-word;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    img {
+          display: block;
+          width: 100%; height: auto;
+          border-radius: $border-radius * 2;
+    }
+}
+.post-excerpt {
+  position: absolute;
+  bottom: 1rem; left: 2rem;
+  color: $post-title-color;
+  .post-title {
+    font-size: $font-size-h1 * 1.5;
+    line-height: 0;
+    letter-spacing: .1rem;
+    text-shadow: 2px 1px 3px $link-color;
+    &:hover {
+      text-shadow: 3px 3px 3px $link-hover-color;
+    }
+  }
+
+  .post-tags a {
+    color: inherit;
+    font-size: $font-size-h3;
+    margin-left: 4px;
+    padding: 0 6px;
+    background: rgba(102, 102, 102, 0.8);
+    border-radius: $border-radius;
+    &:hover {
+      background: rgba(82, 82, 82, 1);
+    }
+  }
+}
+
+#pagination {
+    margin: 20px 0;
+    .page-number {
+      padding-left: 13rem;
+    }
+}
+#navigation {
+  li {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    padding: 0 ;
+    a {
+      display: block;
+      font-size: 1.4rem;
+      line-height: 1.2;
+      &:hover {
+        color: $link-color;
+      }
+    }
+
+  }
+  .post-date {
+    font-size: 1.2rem;
+    color: $footer-color;
+  }
+  @media (max-width: $screen-md) {
+    display: none;
+  }
+}
+
+
+

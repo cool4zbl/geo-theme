@@ -1,1 +1,84 @@
 {{!-- post.hbs --}}
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+<header class="main-header site-header {{#if image}}" style="background-image: url({{image}}) {{else}}no-cover{{/if}}">
+  <nav class="main-nav overlay clearfix">
+    {{#if @blog.logo}}
+    <a href="{{@blog.url}}" class="blog-logo"><img src="{{@blog.logo}}" alt="Blog Logo"></a>
+    {{/if}}
+    {{#if @blog.navigation}}
+      <button class="menu-button" data-action="open-drawer">
+        <i class="fa fa-bars"></i>
+        <span class="word">Menu</span>
+      </button>
+    {{/if}}
+  </nav>
+  <div class="vertical">
+    <div class="main-header-content inner post-info-container">
+      <h1 itemprop="name headline" class="post-title page-title">{{title}}</h1>
+        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-clock-o"></i> {{date format="DD MMMM YYYY"}}</time>
+      {{#if tags}}
+      <span class="post-tags"> <i class="fa fa-tags"></i>{{tags}}</span>
+      {{/if}}
+    </div>
+  </div>
+</header>
+<main id="post-container" role="main">
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <article class="{{post_class}}">
+          <section class="post-content clearfix">
+              {{content}}
+          </section>
+
+          <footer class="post-footer">
+            {{! Everything inside the #author tags pulls data from the author }}
+            {{#author}}
+                {{#if image}}
+                <figure class="author-image">
+                    <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                </figure>
+                {{/if}}
+                <section class="author">
+                    <h4><a href="{{url}}">{{name}}</a></h4>
+                    {{#if bio}}
+                        <p>{{bio}}</p>
+                    {{else}}
+                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
+                    {{/if}}
+                    <div class="author-meta">
+                        {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
+                        {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                    </div>
+                </section>
+            {{/author}}
+          </footer>
+      </article>
+    </div>
+    <div class="col-md-2">
+      <section id="share" class="share affix">
+        <div class="post-progress">
+          <span id="progressbar" style="width: 95%;"></span>
+          <span class="post-progress-info">{{title}}</span>
+          <span id="progressbar-value">95%</span>
+        </div>
+        <div class="post-social">
+              <h4 class="post-footer-heading">Spread the word</h4>
+              <a href="#" data-action="share-twitter"><i class="fa fa-fw fa-lg fa-twitter"></i></a>
+              <a href="#" data-action="share-weibo"><i class="fa fa-fw fa-lg fa-weibo"></i></a>
+              <a href="#" data-action="share-gplus"><i class="fa fa-fw fa-lg fa-google-plus"></i></a>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+</main>
+
+{{/post}}

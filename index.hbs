@@ -3,14 +3,15 @@
 
 <header class="main-header site-header {{#if @blog.cover}}" style="background-image: url({{ @blog.cover}}) {{else}}no-cover{{/if}}">
   <nav class="main-nav overlay clearfix">
-    {{#if @blog.logo}} 
-    <a href="{{@blog.url}}" class="blog-log"><img src="{{@blog.logo}}" alt="Blog Logo"></a>
+    {{#if @blog.logo}}
+    <a href="{{@blog.url}}" class="blog-logo"><img src="{{@blog.logo}}" alt="Blog Logo"></a>
     {{/if}}
     {{#if @blog.navigation}}
-    <a href="#" class="menu-button">
+
+    <button class="menu-button" data-action="open-drawer">
       <i class="fa fa-bars"></i>
       <span class="word">Menu</span>
-    </a>
+    </button>
     {{/if}}
   </nav>
   <div class="vertical">
@@ -24,14 +25,14 @@
 <main id="content" class="content" role="main">
   <div class="container">
     <div class="row">
-      <div class="col-md-9 col-md-offset-1">
+      <div class="col-md-9 col-md-offset-1 main-content">
         {{!-- 每篇博文内容 --}}
         {{> "loop"}}
-        
+
         {{pagination}}
 
       </div>
-      
+
       <div class="col-md-2">
         <ul id="navigation" class="nav nav-stack">
         {{#foreach posts}}
@@ -44,4 +45,4 @@
       </div>
     </div>
   </div>
-</main> 
+</main>

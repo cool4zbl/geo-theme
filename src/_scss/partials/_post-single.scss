@@ -1,0 +1,54 @@
+// Single Post
+header .post-info-container {
+  padding: 10px 0;
+  background: #555;
+  opacity: .7;
+  color: $headings-color;
+  .post-title {
+    font-size: 6rem;
+  }
+  .post-tags {
+      a {
+        border-radius: $border-radius;
+        background: $link-color;
+        padding: 0 2px;
+        color: $headings-color;
+      }
+  }
+}
+.post-content {
+  background: pink;
+  font-size: $font-size-bigger;
+}
+#share {
+  color: $text-color;
+  .post-progress {
+    position: relative;
+    padding: 10px 0;
+    overflow: hidden;
+    width: 100%;
+    border-left: 8px solid #3d8ae3;
+    margin: 0 0 40px 0;
+    span#progressbar {
+      background: $share-bg-color;
+      z-index: -1;
+      width: 0;
+      position: absolute;
+      top: 0; bottom: 0;
+      min-height: inherit;
+      transition: all ease-in-out .2s;
+    }
+    .post-progress-info {
+      font-size: $font-size-large;
+      color: #666;
+      z-index: 9999;
+      padding: 4px;
+    }
+
+  }
+  .post-footer-heading {
+    font-size: $font-size-large;
+    color: $text-color;
+  }
+  // background: orange;
+}

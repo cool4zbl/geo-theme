@@ -1,0 +1,47 @@
+// site-header
+header.site-header, .main-header {
+    position: relative;
+    display: table;
+    width: 100%;
+    width: 100vw;
+    height: 400px;
+    margin-bottom: 5rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+.main-header-content {
+
+    text-align: center;
+}
+.page-title, .page-description {
+    font-size: 8rem;
+    color: $headings-color;
+    letter-spacing: .2rem;
+}
+.page-description {
+    letter-spacing: .1rem;
+    font-size: 4rem;
+}
+.scroll-down {
+    color: red;
+    font-size: 40px;
+    display: block;
+    position: absolute;
+    z-index: 100;
+    bottom: 45px;
+    left: 50%;
+    margin-left: -16px;
+    width: 34px;
+    height: 34px;
+    font-size: 34px;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-animation: bounce 4s 2s infinite;
+    animation: bounce 4s 2s infinite;
+}

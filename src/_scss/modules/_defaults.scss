@@ -1,9 +1,13 @@
-// default 
+// default
 
 * {
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   box-sizing: border-box;
+}
+@font-face {
+  font-family: Exo;
+  src: url('../fonts/exo/Exo-Regular.otf');
 }
 
 html {
@@ -15,12 +19,16 @@ html {
 body {
   font-family: $text-font-family;
   font-size: $text-font-size;
-  line-height: $text-line-height;
+  line-height: $line-height-base;
   letter-spacing: 0.01rem;
   background: $background-color;
   color: $text-color;
 
-  @include breakpoint(small) {
+  // @include breakpoint(small) {
+  //   font-size: 1.5rem;
+  //   line-height: 1.5;
+  // }
+  @media (max-width: $screen-sm) {
     font-size: 1.5rem;
     line-height: 1.5;
   }

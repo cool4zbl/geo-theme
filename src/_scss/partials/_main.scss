@@ -1,1 +1,7 @@
-// Main
+// Main - Every page will display.
+
+html {
+  @media (max-width: $screen-md) {
+    font-size: 12px;
+  }
+}

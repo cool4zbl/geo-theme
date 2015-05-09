@@ -1,0 +1,125 @@
+ // drawer
+nav .menu-button {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    z-index: 999;
+    text-align: center;
+    position: fixed;
+    top: 40px; left: 40px;
+    display: inline-block;
+    color: $background-color;
+    background-color: $drawer-background-color;
+    padding: 0 15px;
+    height: 38px;
+    border: 1px solid $drawer-background-color;
+    border-radius: $border-radius;
+    transition: all ease-in-out .5s;
+    span.word {
+      font-family: $headings-font-family;
+      font-size: $font-size-large;
+      line-height: 2;
+    }
+    i {
+      font-size: $font-size-large;
+    }
+    &:focus {
+      outline: 0;
+    }
+    &:hover {
+      background: $background-color;
+      color: $link-color;
+      border: 1px solid $link-color;
+    }
+}
+
+body.nav-opened {
+  .menu-button {
+      width: 50px;
+      padding: 0 12px;
+      background: $background-color;
+      border: 1px solid $link-color;
+      color: $link-color;
+      -webkit-transform: translate3D($drawer-width, 0, 0);
+          -ms-transform: translate3D($drawer-width, 0, 0);
+              transform: translate3D($drawer-width, 0, 0);
+      transition: all 0.5s ease;
+      .word {
+        opacity: 0;
+        transition: all 0.5s ease;
+      }
+    }
+  .drawer {
+    display: block;
+  }
+}
+body.nav-closed .drawer {
+    display: none;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  outline: 0;
+  z-index: 1000;
+  height: 100vh;
+  width: $drawer-width;
+  background-color: $drawer-background-color;
+}
+.drawer-list {
+  margin: 0;
+  padding: 0;
+  li.drawer-list-item {
+    width: 100%;
+    &:first-child { margin-top: 100px;}
+    transition: all ease-in-out .5s;
+    a {
+      display: block;
+      position: relative;
+      padding: 0 15px;
+      font-size: 1.6rem;
+      line-height: 2;
+      color: $drawer-text-color;
+      font-family: inherit;
+      text-decoration: none;
+      transition: color .3s;
+      -webkit-backface-visibility: hidden;
+
+      &:before {
+        content:'';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: #387FB3;
+        transition: all ease-in-out .3s;
+      }
+
+      &:focus,
+      &:hover {
+        color: $link-hover-color;
+        background-color: $background-color;
+        &:before {
+          width: 5px;
+        }
+      }
+    }
+    .fa {
+      margin: 0 15px 0 0;
+      text-align: left;
+      font-size: 22px;
+      width: 1.2857142857142858em; //fixed width icon
+    }
+  }
+}
+.drawer-list-divider {
+    // position: relative;
+    // left: -30px; top: 2px;
+    margin: 20px 0;
+    border-bottom: 2px solid $link-color;
+    width: 250px;
+}

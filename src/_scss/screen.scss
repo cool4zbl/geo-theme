@@ -1,14 +1,16 @@
-// Core variables and mixins 
+// Core variables and mixins
+@import "modules/vars";
 @import "mixins/breakpoint";
 @import "mixins/clearfix";
-@import "modules/vars"; 
+@import "mixins/grid-framework";
+@import "mixins/grid";
 
 // Reset
 @import "modules/normalize";
 @import "modules/defaults";
- 
-// Core CSS 
-/* 
+
+// Core CSS
+/*
 @import "modules/buttons";
 @import "modules/figures";
 @import "modules/forms";
@@ -18,20 +20,23 @@
 @import "modules/misc";
 */
 @import "modules/typography";
+@import "modules/grid";
+// need vars. @import "modules/tooltip";
 
 // PARTIALS
 
 @import "partials/main";
-//@import "partials/post-list";
-//@import "partials/post-single";
-//@import "partials/footer";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/drawer";
+@import "partials/post-list";
+@import "partials/post-single";
 
 
 // Need to be after every module
 @import "modules/utils";
 
-
-/* 
+/*
 // VENDOR
 
 @import "vendor/pace";

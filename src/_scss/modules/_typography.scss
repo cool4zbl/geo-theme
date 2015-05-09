@@ -8,11 +8,29 @@ h1, h2, h3, h4, h5, h6,
   font-weight: $headings-font-weight;
   line-height: $headings-line-height;
   color: $headings-color;
-
+  article .post-content & { color: $text-color;}
   small,
   .small {
     font-weight: normal;
     line-height: 1;
     color: $headings-small-color;
   }
+}
+
+
+// Link
+a {
+  text-decoration: none;
+  color: $link-color;
+  transition: color 0.3s ease-in;
+  &:hover {
+    color: $link-hover-color;
+    .fa-twitter {color: $tw-color;}
+    .fa-weibo {color: $weibo-color;}
+  }
+}
+
+// ul li ol
+ul {
+  list-style-type: none;
 }
