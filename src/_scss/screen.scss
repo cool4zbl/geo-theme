@@ -1,6 +1,42 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+// Core variables and mixins 
+@import "mixins/breakpoint";
+@import "mixins/clearfix";
+@import "modules/vars"; 
+
+// Reset
+@import "modules/normalize";
+@import "modules/defaults";
+ 
+// Core CSS 
+/* 
+@import "modules/buttons";
+@import "modules/figures";
+@import "modules/forms";
+@import "modules/lists";
+@import "modules/quotes";
+@import "modules/tables";
+@import "modules/misc";
+*/
+@import "modules/typography";
+
+// PARTIALS
+
+@import "partials/main";
+//@import "partials/post-list";
+//@import "partials/post-single";
+//@import "partials/footer";
 
 
+// Need to be after every module
+@import "modules/utils";
+
+
+/* 
+// VENDOR
+
+@import "vendor/pace";
+@import "vendor/prism";
+
+// External
+@import "vendor/gist";
+*/

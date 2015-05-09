@@ -1,1 +1,1 @@
-jQuery(document).ready(function(o){console.log("It load","successful~")});
+jQuery(document).ready(function(o){console.log("It load","successful")});
