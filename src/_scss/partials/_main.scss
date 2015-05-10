@@ -9,16 +9,9 @@ html {
 .toTop {
   z-index: 9999;
   position: fixed;
-  bottom: 30px; right: 90px;
+  bottom: 30px; right: 110px;
   color: $text-color;
-  width: 40px; height: 40px;
-  font-size: 18px;
-  line-height: 37px;
-    border: {
-    radius: 100%;
-    width: 2px;
-    style: solid;
-  }
+  font-size: 45px;
   i {
     position: relative;
     left: 8px;
