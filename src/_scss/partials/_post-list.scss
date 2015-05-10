@@ -76,6 +76,12 @@
     display: none;
   }
 }
-
+#navigation.affix {
+  position: fixed;
+  top: 20px;
+}
+#navigation.affix-bottom {
+  position: absolute;
+}
 
 

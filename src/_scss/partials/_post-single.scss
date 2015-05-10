@@ -22,7 +22,9 @@ header .post-info-container {
 }
 #share {
   color: $text-color;
+  z-index: 999;
   .post-progress {
+
     position: relative;
     padding: 10px 0;
     overflow: hidden;
@@ -32,17 +34,22 @@ header .post-info-container {
     span#progressbar {
       background: $share-bg-color;
       z-index: -1;
-      width: 0;
       position: absolute;
       top: 0; bottom: 0;
       min-height: inherit;
-      transition: all ease-in-out .2s;
+      transition: all ease-in .2s;
+    }
+    span#progressbar-value {
+      display: block;
+      color: #666;
+      font-size: $font-size-base;
+      padding: 0 4px;
     }
     .post-progress-info {
       font-size: $font-size-large;
-      color: #666;
-      z-index: 9999;
-      padding: 4px;
+      color: $text-color;
+      padding: 0 4px;
+
     }
 
   }
@@ -50,5 +57,11 @@ header .post-info-container {
     font-size: $font-size-large;
     color: $text-color;
   }
-  // background: orange;
+}
+#share.affix {
+  position: fixed;
+  top: 20px;
+}
+#share.affix-bottom {
+  position:absolute;
 }

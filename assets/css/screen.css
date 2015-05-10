@@ -1064,6 +1064,13 @@ body.nav-closed .drawer {
   #navigation {
     display: none; } }
 
+#navigation.affix {
+  position: fixed;
+  top: 20px; }
+
+#navigation.affix-bottom {
+  position: absolute; }
+
 header .post-info-container {
   padding: 10px 0;
   background: #555;
@@ -1082,7 +1089,8 @@ header .post-info-container {
   font-size: 21px; }
 
 #share {
-  color: #333; }
+  color: #333;
+  z-index: 999; }
   #share .post-progress {
     position: relative;
     padding: 10px 0;
@@ -1093,21 +1101,31 @@ header .post-info-container {
     #share .post-progress span#progressbar {
       background: #f3f3f3;
       z-index: -1;
-      width: 0;
       position: absolute;
       top: 0;
       bottom: 0;
       min-height: inherit;
-      -webkit-transition: all ease-in-out 0.2s;
-              transition: all ease-in-out 0.2s; }
+      -webkit-transition: all ease-in 0.2s;
+              transition: all ease-in 0.2s; }
+    #share .post-progress span#progressbar-value {
+      display: block;
+      color: #666;
+      font-size: 14px;
+      padding: 0 4px; }
     #share .post-progress .post-progress-info {
       font-size: 18px;
-      color: #666;
-      z-index: 9999;
-      padding: 4px; }
+      color: #333;
+      padding: 0 4px; }
   #share .post-footer-heading {
     font-size: 18px;
     color: #333; }
+
+#share.affix {
+  position: fixed;
+  top: 20px; }
+
+#share.affix-bottom {
+  position: absolute; }
 
 /* ------  */
 /* ------  */
