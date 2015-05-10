@@ -18,6 +18,11 @@ header .post-info-container {
 }
 .post-content {
   font-size: $font-size-bigger;
+  img {
+
+    max-width: 100%;
+  }
+  // font-size: 1rem; 1rem = 12.5px
 }
 #share {
   @media (max-width: $screen-md) {
@@ -74,10 +79,17 @@ header .post-info-container {
     max-width: 160px;
     border-radius: 100%;
   }
-  .author h4{
+  .author {
+    h5{
     margin: 0;
+    }
+    p {
+    font-style: italic;
+    color: $muted-text-color;
+    margin-bottom: 0;
+    a {
+      color: $muted-text-color;
+    }
   }
-  .bio {
-    color: #666;
-  }
+}
 }

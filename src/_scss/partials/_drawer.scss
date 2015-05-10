@@ -95,7 +95,8 @@ body.nav-closed .drawer {
         height: 100%;
         left: 0;
         top: 0;
-        background-color: #387FB3;
+        // background-color: #387FB3;
+        background-color: $link-hover-color;
         transition: all ease-in-out .3s;
       }
 

@@ -13,9 +13,9 @@
     -webkit-hyphens: auto;
     hyphens: auto;
     img {
-          display: block;
-          width: 100%; height: auto;
-          border-radius: $border-radius * 2;
+        display: block;
+        width: 100%; height: auto;
+        border-radius: $border-radius * 2;
     }
 }
 .post-excerpt {
@@ -23,12 +23,12 @@
   bottom: 1rem; left: 2rem;
   color: $post-title-color;
   .post-title {
+    margin: 20px 0;
     font-size: $font-size-h1 * 1.5;
-    line-height: 0;
     letter-spacing: .1rem;
     text-shadow: 2px 1px 3px $link-color;
     &:hover {
-      text-shadow: 3px 3px 3px $link-hover-color;
+      text-shadow: 3px 3px 3px $title-hover-color;
     }
   }
 
@@ -63,7 +63,7 @@
       font-size: 1.4rem;
       line-height: 1.2;
       &:hover {
-        color: $link-color;
+        color: $link-hover-color;
       }
     }
 
