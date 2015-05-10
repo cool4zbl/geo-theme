@@ -11,14 +11,26 @@
     var $postContent = $('main#content');
     $postContent.fitVids();
 
+    /** Move to Top **/
+    $(window).scroll(function() {
+        if($(this).scrollTop() !== 0) {
+        $(".toTop").fadeIn();
+        } else {
+        $(".toTop").fadeOut();
+        }
+    });
+    $('.toTop').arctic_scroll();
+
     /** Move to Content **/
     $('a.scroll-down').arctic_scroll();
+
 
     /** Drawer open or close **/
     $('.menu-button, .nav-close').on('click', function(event) {
       event.preventDefault();
       $('body').toggleClass('nav-closed nav-opened');
     });
+
 
     /**
     * JS: Affix

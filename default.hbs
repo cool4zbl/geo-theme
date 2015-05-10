@@ -9,23 +9,67 @@
     <title>{{meta_title}}</title>
     <meta name="description" content="{{meta_description}}" />
     <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
+    <meta name="description" content="{{meta_description}}">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{meta_title}}">
+    <meta name="twitter:description" content="{{meta_description}}">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{meta_title}}">
+    <meta property="og:description" content="{{meta_description}}">
+    {{> custom/meta this}}
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
     {{!-- font-awesome --}}
     <link rel="stylesheet" href="http://libs.useso.com/js/font-awesome/4.2.0/css/font-awesome.min.css">
 
+    {{!-- Prism CSS --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/prism-okaidia.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/prism-autolinker.css"}}" />
+
+    {{!-- Pace CSS--}}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/pace-theme-minimal.css"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
     {{!-- <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.css"}}" /> --}}
   {{!--   <link rel="stylesheet" type="text/css" href="//fonts.useso.com/css?family=Open+Sans:700,400" /> --}}
 
     <script type="text/javascript" src="{{asset "js/modernizr.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/pace.min.js"}}"></script>
+    <script type="text/javascript">
+        {{> custom/config}}
+      // Pace Options
+      // ==============
+      window.paceOptions = {
+        catchupTime: 100,
+        minTime: 100,
+        elements: false,
+        restartOnRequestAfter: 500,
+        startOnPageLoad: false
+      }
+
+      // Geo Globals
+      // ==============
+      window.GEO = {};
+      GEO.haveGA = typeof ga_ua !== 'undefined' && ga_ua !== 'UA-XXXXX-X';
+      GEO.haveDisqus = typeof disqus_shortname !== 'undefined' && disqus_shortname !== 'example';
+      GEO.enablePjax = typeof enable_pjax !== 'undefined' ? enable_pjax : true;
+    </script>
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
 <body class="{{body_class}} nav-closed">
-
+    <div>
+        <a class="toTop" href="#" data-position="0">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
     <nav tabindex="-1" class="drawer">
         <div class="drawer-container">
     <!--.drawer-search(role="search")-->
@@ -37,12 +81,15 @@
     {{!-- {{navigation}} --}}
 
     <div class="site-wrapper">
+        <div class="surface">
+            <div class="surface-container">
 
         {{! Everything else gets inserted here }}
         {{{body}}}
 
         {{> footer }}
-
+            </div>
+        </div>
     </div>
 
     {{! Ghost outputs important scripts and data with this tag }}
@@ -51,7 +98,12 @@
     {{! The main JavaScript file for Theme }}
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/prism-autolinker.min.js"}}"></script>
+     {{!-- // <script type="text/javascript" src="{{asset "js/foot-scripts.min.js"}}"></script> --}}
+      <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+     <script type="text/javascript" src="{{asset "js/scripts.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/fastclick.js"}}"></script>
 
 </body>
 </html>

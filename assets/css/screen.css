@@ -783,6 +783,37 @@ ul {
   html {
     font-size: 12px; } }
 
+.toTop {
+  z-index: 9999;
+  position: fixed;
+  bottom: 30px;
+  right: 90px;
+  color: #333;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  line-height: 37px;
+  border-radius: 100%;
+  border-width: 2px;
+  border-style: solid; }
+  .toTop i {
+    position: relative;
+    left: 8px; }
+
+.divider {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  position: relative; }
+  .divider:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 50%;
+    margin-left: -25px;
+    height: 1px;
+    width: 50px;
+    background: #ddd; }
+
 header.site-header, .main-header {
   position: relative;
   display: table;
@@ -1085,12 +1116,14 @@ header .post-info-container {
     color: #fff; }
 
 .post-content {
-  background: pink;
   font-size: 21px; }
 
 #share {
   color: #333;
   z-index: 999; }
+  @media (max-width: 992px) {
+    #share {
+      display: none; } }
   #share .post-progress {
     position: relative;
     padding: 10px 0;
@@ -1111,7 +1144,7 @@ header .post-info-container {
       display: block;
       color: #666;
       font-size: 14px;
-      padding: 0 4px; }
+      padding: 0 0 0 4px; }
     #share .post-progress .post-progress-info {
       font-size: 18px;
       color: #333;
@@ -1126,6 +1159,18 @@ header .post-info-container {
 
 #share.affix-bottom {
   position: absolute; }
+
+.post-footer {
+  margin: 40px 0 0 0;
+  border-top: 1px solid #ddd;
+  text-align: center; }
+  .post-footer .author-image img {
+    max-width: 160px;
+    border-radius: 100%; }
+  .post-footer .author h4 {
+    margin: 0; }
+  .post-footer .bio {
+    color: #666; }
 
 /* ------  */
 /* ------  */

@@ -43,24 +43,30 @@
             {{#author}}
                 {{#if image}}
                 <figure class="author-image">
-                    <a class="img" href="{{url}}" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></a>
+                  <a href="{{url}}">
+                    <img src="{{image}}" alt="{{name}}'s image">
+                  </a>
                 </figure>
                 {{/if}}
-                <section class="author">
+                <section class="author divider">
                     <h4><a href="{{url}}">{{name}}</a></h4>
                     {{#if bio}}
                         <p>{{bio}}</p>
                     {{else}}
                         <p>Read <a href="{{url}}">more posts</a> by this author.</p>
                     {{/if}}
-                    <div class="author-meta">
+
+                    <div class="author-meta ">
                         {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
-                        {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
+                        {{#if website}}<span class="author-link icon-link divider"><a href="{{website}}">{{website}}</a></span>{{/if}}
                     </div>
                 </section>
             {{/author}}
           </footer>
       </article>
+      <section itemprop="comment" class="post-comments">
+        <div id="disqus_thread"> Comments</div>
+      </section>
     </div>
     <div class="col-md-2">
       <section id="share" class="share affix">
@@ -82,3 +88,22 @@
 </main>
 
 {{/post}}
+
+<script type="text/javascript">
+  if(GEO.haveDisqus) {
+    {{#post}}
+    var disqus_identifier = '{{id}}';
+    {{/post}}
+
+    if(typeof DISQUS !== 'object') {
+      (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+      }());
+    }
+  } else {
+    document.querySelector('.post-comments').remove();
+  }
+</script>

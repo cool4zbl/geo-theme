@@ -17,14 +17,15 @@ header .post-info-container {
   }
 }
 .post-content {
-  background: pink;
   font-size: $font-size-bigger;
 }
 #share {
+  @media (max-width: $screen-md) {
+    display: none;
+  }
   color: $text-color;
   z-index: 999;
   .post-progress {
-
     position: relative;
     padding: 10px 0;
     overflow: hidden;
@@ -43,7 +44,7 @@ header .post-info-container {
       display: block;
       color: #666;
       font-size: $font-size-base;
-      padding: 0 4px;
+      padding: 0 0 0 4px;
     }
     .post-progress-info {
       font-size: $font-size-large;
@@ -51,7 +52,6 @@ header .post-info-container {
       padding: 0 4px;
 
     }
-
   }
   .post-footer-heading {
     font-size: $font-size-large;
@@ -64,4 +64,20 @@ header .post-info-container {
 }
 #share.affix-bottom {
   position:absolute;
+}
+
+.post-footer {
+  margin: 40px 0 0 0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  .author-image img{
+    max-width: 160px;
+    border-radius: 100%;
+  }
+  .author h4{
+    margin: 0;
+  }
+  .bio {
+    color: #666;
+  }
 }
